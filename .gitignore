@@ -1,1 +1,16 @@
+# Environment variables
 .env
+
+# Node modules
+node_modules/
+
+# Log files
+*.log
+
+# Other files or directories to ignore
+.DS_Store
+.vscode/
+.idea/
+dist/
+build/
+coverage/
