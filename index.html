@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indoor Beach Volleyball Roster</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .roster {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        .roster th, .roster td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .roster th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .time-slot {
+            background-color: #f2f2f2;
+        }
+        .team {
+            background-color: #ffff99;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Indoor Beach Volleyball Roster</h1>
+    <select id="daySelect">
+        <option value="today">Today's Roster</option>
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+    </select>
+    <div id="todayRoster">
+        <table class="roster" id="todayRosterTable">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Match Type</th>
+                    <th>Division</th>
+                    <th>Court</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody id="todayRosterBody"></tbody>
+        </table>
+    </div>
+    <div id="mondayRoster" class="hidden">
+        <h2>Monday</h2>
+        <table class="roster">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Match Type</th>
+                    <th>Division</th>
+                    <th>Court</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody id="mondayRosterBody"></tbody>
+        </table>
+    </div>
+    <div id="tuesdayRoster" class="hidden">
+        <h2>Tuesday</h2>
+        <table class="roster">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Match Type</th>
+                    <th>Division</th>
+                    <th>Court</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody id="tuesdayRosterBody"></tbody>
+        </table>
+    </div>
+    <div id="wednesdayRoster" class="hidden">
+        <h2>Wednesday</h2>
+        <table class="roster">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Match Type</th>
+                    <th>Division</th>
+                    <th>Court</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody id="wednesdayRosterBody"></tbody>
+        </table>
+    </div>
+    <div id="thursdayRoster" class="hidden">
+        <h2>Thursday</h2>
+        <table class="roster">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Match Type</th>
+                    <th>Division</th>
+                    <th>Court</th>
+                    <th>Teams</th>
+                </tr>
+            </thead>
+            <tbody id="thursdayRosterBody"></tbody>
+        </table>
+    </div>
+    <script src="fetchMatches.js"></script>
+    <script>
+        document.getElementById('daySelect').addEventListener('change', function() {
+            const selectedDay = this.value;
+            document.querySelectorAll('.roster-section').forEach(section => section.classList.add('hidden'));
+            document.getElementById(selectedDay + 'Roster').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
